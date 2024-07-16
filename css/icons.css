@@ -1,0 +1,52 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);
+
+.icons::before {
+  display: inline-block;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 0.5rem;
+}
+
+.icons.nomargin::before {
+  margin-right: 0;
+}
+
+.icons.musicdisc::before {
+  content: "\f51f";
+}
+
+.icons.backward::before {
+  content: "\f04a";
+}
+
+.icons.forward::before {
+  content: "\f04e";
+}
+
+.icons.pause::before {
+  content: "\f04c";
+}
+
+.icons.play::before {
+  content: "\f04b";
+}
+
+.icons.xmark::before {
+  content: "\f00d";
+}
+
+.icons.info::before {
+  content: "\f129";
+}
+
+.icons.caretLeft::before {
+  content: "\f0d9";
+}
+
+.icons.caretRight::before {
+  content: "\f0da";
+}

@@ -1,0 +1,180 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: hsl(210, 10%, 90%);
+}
+
+body {
+  background-color: hsl(210, 5%, 5%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: sans-serif;
+}
+
+body[data-clicltoplay]::before,
+body[data-clicltoplay]::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+}
+
+body[data-clicltoplay]::before {
+  background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+body[data-clicltoplay]::after {
+  content: "Click to play";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+main {
+  max-width: 1000px;
+}
+
+#canvas {
+  background-color: hsl(0, 0%, 0%);
+  image-rendering: pixelated;
+}
+
+.points {
+  position: absolute;
+  top: -1em;
+  left: -1em;
+  display: block;
+  pointer-events: none;
+  width: 1em;
+  height: 1em;
+  border-width: 1em;
+  border-style: solid;
+  --border-color: rgba(255, 0, 0, 0.8);
+  border-color: var(--border-color) transparent transparent var(--border-color);
+  border-image: initial;
+}
+
+.points2 {
+  --border-color: rgba(0, 255, 0, 0.8);
+}
+
+:focus-visible {
+  box-shadow: 0 0 0.5em 0.5em hsla(0, 0%, 0%, 0.8);
+}
+
+.buttons {
+  background-color: hsla(0, 0%, 100%, 0.2);
+  border: solid 0.1em hsla(0, 0%, 100%, 0.2);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.square {
+  padding: 0;
+  width: 2em;
+  height: 2em;
+}
+
+.buttons:hover {
+  background-color: hsla(0, 0%, 100%, 0.4);
+  border: solid 0.1em hsla(0, 0%, 100%, 0.5);
+  color: hsl(0, 0%, 100%);
+}
+
+.buttons:active,
+.buttons:focus-visible {
+  background-color: hsla(0, 0%, 100%, 0.8);
+  border: solid 0.1em hsla(0, 0%, 100%, 0.4);
+  color: hsl(0, 0%, 0%);
+}
+
+#playbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  --halfsize: 1.5em;
+
+  position: absolute;
+  top: calc(50% - var(--halfsize));
+  left: calc(50% - var(--halfsize));
+}
+
+#score {
+  padding: 0.5em;
+  background-color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+#credits {
+  position: fixed;
+  inset: 0;
+  background-color: black;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#credits * {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+#creditsDiv {
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+}
+
+#openCreditsButton,
+#closeCreditsButton {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+}
+
+/* mobileControls */
+#mobileControls {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: max(10em, 20vh);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 2em;
+  padding: 1em;
+}
+
+.mobileControlsButtons {
+  background-color: hsla(0, 0%, 100%, 0.1) !important;
+  border: solid 0.1em hsla(0, 0%, 100%, 0.1) !important;
+  color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+}

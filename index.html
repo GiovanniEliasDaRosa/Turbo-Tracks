@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turbo Tracks</title>
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/musicmanager.css" />
+
+    <script src="js/functions.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/events.js" defer></script>
+    <script src="js/musicmanager.js" defer></script>
+  </head>
+  <body data-clicltoplay>
+    <main>
+      <div class="points points1"></div>
+      <div class="points points2"></div>
+
+      <div id="score">
+        Score:
+        <span id="scoreText"></span>
+      </div>
+      <canvas id="canvas"></canvas>
+
+      <div>
+        <button class="buttons icons nomargin play" id="playbutton"></button>
+      </div>
+
+      <div id="mobileControls">
+        <button
+          class="buttons mobileControlsButtons icons nomargin caretLeft"
+          id="leftMobileButton"
+        ></button>
+        <button
+          class="buttons mobileControlsButtons icons nomargin caretRight"
+          id="rightMobileButton"
+        ></button>
+      </div>
+
+      <div id="musicdiv">
+        <div id="musiccontrols">
+          <div id="musiccontrols__top">
+            <button id="musicbackward" class="buttons square icons nomargin backward"></button>
+            <button id="musicpause" class="buttons square icons nomargin pause"></button>
+            <button id="musicforward" class="buttons square icons nomargin forward"></button>
+          </div>
+          <div id="musiccontrols__percentage">
+            <div id="musiccontrols__percentage__fill"></div>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              id="musiccontrols__percentage__slider"
+            />
+          </div>
+        </div>
+
+        <div id="music" class="icons nomargin musicdisc">
+          <div id="music__content">Heart-Shaped Box - Nirvana</div>
+        </div>
+      </div>
+
+      <button class="buttons square icons nomargin info" id="openCreditsButton"></button>
+    </main>
+
+    <div id="credits">
+      <div id="creditsDiv">
+        <button class="buttons square icons nomargin xmark" id="closeCreditsButton"></button>
+        <h1>Creation</h1>
+        <p>I created the code, art, and the music I got from OpenGameArt with license of CC0</p>
+        <h1>Musics</h1>
+        <a href="https://opengameart.org/content/fdsnamco-pwm-demonstation"
+          >Coding Pirates by Spring Spring</a
+        >
+        <a href="https://opengameart.org/content/leap-8bit">Leap [8bit] by nene</a>
+      </div>
+    </div>
+
+    <div id="audios">
+      <audio
+        src="musics/music1.mp3"
+        class="musicaudios"
+        data-credits="Coding Pirates by Spring Spring"
+      ></audio>
+      <audio src="musics/music2.wav" class="musicaudios" data-credits="Leap [8bit] by nene"></audio>
+    </div>
+  </body>
+</html>
