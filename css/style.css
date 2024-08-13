@@ -151,6 +151,18 @@ main {
   max-width: 1080px;
 }
 
+a {
+  color: hsl(220, 60%, 60%);
+}
+
+a:hover {
+  color: hsl(220, 80%, 80%);
+}
+
+a:is(:active, :focus-visible) {
+  color: hsl(220, 50%, 50%);
+}
+
 #openCreditsButton,
 #closeCreditsButton {
   position: fixed;
